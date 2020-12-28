@@ -1,4 +1,4 @@
-
+from PlayerClass import Player
 
 class Objects:
     """

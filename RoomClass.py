@@ -1,4 +1,5 @@
 from ObjectsClass import Objects
+from PlayerClass import Player
 
 class Rooms:
     """
@@ -6,6 +7,9 @@ class Rooms:
     An instance of this class is therefore a house object.
 
     Parameters:
+        Character = Takes the character object defined in the main file.
+                    This will allow character methods and variables to be changed accordingly.
+
         RoomName = Takes the name of the room the character is in. 
                    This will be set to the living room by default.
     
@@ -20,9 +24,11 @@ class Rooms:
         Kitchen = Runs the code for when the player enters the kitchen.
 
         Hallway = Runs the code for when the player enters the upstairs hallway.
+
+        Bathroom = Runs the code for when the player enters the bathroom.
     """
 
-    def __init__(self, RoomName="living"):
+    def __init__(self, Character, RoomName="living"):
         """
         This method defines the initial variables when an object is instantiated.
 
@@ -32,9 +38,13 @@ class Rooms:
 
             self.objects = Creates an instance of the object class.
                            This populates the rooms with non-essential objects.
+            
+            self.character = Defines the character object as a variable of the instance of this class.
+                             Allows character methods to be used and variables to be changed.
         """
         self.room_name = RoomName
         self.objects = Objects()
+        self.character = Character
     
 
 
@@ -53,6 +63,8 @@ class Rooms:
         # This block is used to move into the hallway.
         elif self.room_name == "Hallway" or self.room_name == "hallway":
             self.Hallway()
+        elif self.room_name == "Bathroom" or self.room_name == "bathroom":
+            self.Bathroom()
     
 
 
@@ -217,3 +229,53 @@ class Rooms:
                 valid_move = True
             else:
                 print("Not a valid room, try again.")
+    
+
+
+    def Bathroom(self):
+        """
+        This method defines the actions the player can take when they enter the bathroom.
+        The player can pick up the power back or look at the mirror.
+
+        Variables:
+            option = The option picked by the player is stored in this variable.
+                     Set to None as default.
+        """
+        option = None
+
+        # Code to describe the bathroom.
+        print("You are in the bathroom.")
+        print("There is a mirror on the wall.")
+
+        # While loop allows player to stay in bathroom as long as they like.
+        while self.room_name != "Hallway" or self.room_name != "hallway":
+            # Use if statement to check if player has picked up the power pack already.
+            if self.character.power_pack == False:
+                print("There seems to be something in the bath.")
+                print("What do you do?")
+                print("Look in the mirror, look in the bath or go back to the hallway?")
+                option = input("(Mirror/Bath/Hallway) \n")
+                # Use another if statement to check for valid input and execute code.
+                if option == "Mirror" or option == "mirror":
+                    pass
+                elif option == "Bath" or option == "bath":
+                    pass
+                elif option == "Hallway" or option == "hallway":
+                    # Escapes while loop.
+                    self.room_name = "hallway"
+                else:
+                    print("Not a valid input, try again.")
+            # This block runs if the player already has the power pack.
+            # Skips the bath section.
+            elif self.character.power_pack == True:
+                print("What do you do?")
+                print("Look in the mirror or return to the hallway?")
+                option = input("(Mirror/Hallway) \n")
+                # Check for valid input and execute code.
+                if option == "Mirror" or option == "mirror":
+                    pass
+                elif option == "Hallway" or option == "hallway":
+                    # Escapes while loop.
+                    self.room_name = "hallway"
+                else:
+                    print("Not a valid input, try again.")

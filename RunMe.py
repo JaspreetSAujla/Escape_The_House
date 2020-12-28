@@ -3,8 +3,8 @@ from PlayerClass import Player
 
 if __name__ == "__main__":
     # Define the variables.
-    house = Rooms("living")          # Creates a house object.
-    character = Player()             # Creates a player object.
+    character = Player()                        # Creates a player object.
+    house = Rooms(character, "living")          # Creates a house object.
 
     # Introduce the game.
     print("You wake up out of a slumber. \nYou apprear to be on the floor.")

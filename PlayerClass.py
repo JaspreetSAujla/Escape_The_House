@@ -26,7 +26,12 @@ class Player:
             self.batteries = Checks whether the player has picked up the batteries.
                              Batteries can be used in the radio.
                              Set to False by default.
+            
+            self.power_pack = Checks whether the player has picked up the power pack.
+                              Power pack used to turn power back on.
+                              Set to False by default.
         """
         self.escaped = False
         self.power = False
         self.batteries = False
+        self.power_pack = False
