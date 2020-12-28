@@ -18,6 +18,8 @@ class Rooms:
         LivingRoom = Runs the code for when the player enters the living room.
 
         Kitchen = Runs the code for when the player enters the kitchen.
+
+        Hallway = Runs the code for when the player enters the upstairs hallway.
     """
 
     def __init__(self, RoomName="living"):
@@ -48,6 +50,9 @@ class Rooms:
         # This block is used to move into the kitchen.
         elif self.room_name == "Kitchen" or self.room_name == "kitchen":
             self.Kitchen()
+        # This block is used to move into the hallway.
+        elif self.room_name == "Hallway" or self.room_name == "hallway":
+            self.Hallway()
     
 
 
@@ -95,10 +100,11 @@ class Rooms:
         # Loops over if room is not valid.
         while valid_move == False:
             print("Which room would you like to move to?")
-            print("(Kitchen/Upstaurs/Door)")
+            print("The kitchen, upstairs hallway or try the front door.")
+            print("(Kitchen/Hallway/Door)")
             self.room_name = input()
             # If statement checks the name is valid to escape the while loop.
-            if self.room_name == "Kitchen" or self.room_name == "kitchen" or self.room_name == "Upstairs" or self.room_name == "upstairs" or self.room_name == "Door" or self.room_name == "door":
+            if self.room_name == "Kitchen" or self.room_name == "kitchen" or self.room_name == "Hallway" or self.room_name == "hallway" or self.room_name == "Door" or self.room_name == "door":
                 valid_move = True
             else:
                 print("Not a valid room, try again.")
@@ -147,12 +153,67 @@ class Rooms:
         
         # Loops over if room is not valid.
         while valid_move == False:
-            print("Which room would you like to move to>")
+            print("Which room would you like to move to?")
             print("The basement or living room?")
             print("(Basement/Living)")
             self.room_name = input()
             # If statement checks the name is valid to escape the while loop.
             if self.room_name == "Basement" or self.room_name == "basement" or self.room_name == "Living" or self.room_name == "living":
+                valid_move = True
+            else:
+                print("Not a valid room, try again.")
+    
+
+
+    def Hallway(self):
+        """
+        This method defines the actions taken when the player enters the upstairs hallway.
+        The player can interact with the painting or move rooms.
+
+        Variables:
+            move_rooms = This variables allows the player to interact with the objects as many times
+                         as they want before moving rooms.
+                         Set to False by default.
+
+            option = The option picked by the player is stored in this variable.
+                     Set to None as default.
+
+            valid_move = Checks if the room entered for moving is valid or not.
+                         Set to False as default.
+        """
+        move_rooms = False
+        option = None
+        valid_move = False
+
+        # Code to describe the hallway to the player.
+        print("You are in the upstairs hallway.")
+        print("There is a painting on the wall.")
+        print("There are doors leading to the bedroom, bathroom and attic.")
+        print("There are also stairs leading down to the living room.")
+
+        # While loop allows player to interact with objects as many times as they want.
+        while move_rooms == False:
+            print("What would you like to do?")
+            print("Look at the painting or move rooms?")
+            option = input("(Painting/Move) \n")
+            # This block allows the player to interact with the painting.
+            if option == "Painting" or option == "painting":
+                pass
+            # Allows player to move rooms.
+            elif option == "Move" or option == "move":
+                move_rooms = True
+            # Prompts player to put valid input.
+            else:
+                print("Not a valid input, try again.")
+        
+        # Loops over if room is not valid.
+        while valid_move == False:
+            print("Which room would you like to move to?")
+            print("The bedroom, bathroom, attic or living room?")
+            print("(Bedroom/Bathroom/Attic/Living)")
+            self.room_name = input()
+            # If statement checks if the name is valid to escape while loop.
+            if self.room_name == "Bedroom" or self.room_name == "bedroom" or self.room_name == "Bathroom" or self.room_name == "bathroom" or self.room_name == "Attic" or self.room_name == "attic" or self.room_name == "Living" or self.room_name == "living":
                 valid_move = True
             else:
                 print("Not a valid room, try again.")
