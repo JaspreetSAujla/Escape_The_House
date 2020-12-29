@@ -246,36 +246,25 @@ class Rooms:
         # Code to describe the bathroom.
         print("You are in the bathroom.")
         print("There is a mirror on the wall.")
+        print("There is also a bath with the shower curtain closed.")
 
         # While loop allows player to stay in bathroom as long as they like.
         while self.room_name != "Hallway" or self.room_name != "hallway":
-            # Use if statement to check if player has picked up the power pack already.
-            if self.character.power_pack == False:
-                print("There seems to be something in the bath.")
-                print("What do you do?")
-                print("Look in the mirror, look in the bath or go back to the hallway?")
-                option = input("(Mirror/Bath/Hallway) \n")
-                # Use another if statement to check for valid input and execute code.
-                if option == "Mirror" or option == "mirror":
+            print("What do you do?")
+            print("Look in the mirror, look in the bath or go back to the hallway?")
+            option = input("(Mirror/Bath/Hallway) \n")
+            # Use if statement to check for valid input and execute code.
+            if option == "Mirror" or option == "mirror":
+                pass
+            elif option == "Bath" or option == "bath":
+                # Use if statement to check if player has picked up the power pack already.
+                if self.character.power_pack == False:
+                    print("There seems to be something in the bath.")
                     pass
-                elif option == "Bath" or option == "bath":
-                    pass
-                elif option == "Hallway" or option == "hallway":
-                    # Escapes while loop.
-                    self.room_name = "hallway"
                 else:
-                    print("Not a valid input, try again.")
-            # This block runs if the player already has the power pack.
-            # Skips the bath section.
-            elif self.character.power_pack == True:
-                print("What do you do?")
-                print("Look in the mirror or return to the hallway?")
-                option = input("(Mirror/Hallway) \n")
-                # Check for valid input and execute code.
-                if option == "Mirror" or option == "mirror":
-                    pass
-                elif option == "Hallway" or option == "hallway":
-                    # Escapes while loop.
-                    self.room_name = "hallway"
-                else:
-                    print("Not a valid input, try again.")
+                    print("There is nothing in the bath.")
+            elif option == "Hallway" or option == "hallway":
+                # Escapes while loop.
+                self.room_name = "hallway"
+            else:
+                print("Not a valid input, try again.")
