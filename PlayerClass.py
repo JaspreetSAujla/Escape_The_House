@@ -30,8 +30,13 @@ class Player:
             self.power_pack = Checks whether the player has picked up the power pack.
                               Power pack used to turn power back on.
                               Set to False by default.
+            
+            self.token = Checks whether the player has picked up the token to open the
+                         washing machine.
+                         Set to False by default.
         """
         self.escaped = False
         self.power = False
         self.batteries = False
         self.power_pack = False
+        self.token = False

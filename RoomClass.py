@@ -26,6 +26,8 @@ class Rooms:
         Hallway = Runs the code for when the player enters the upstairs hallway.
 
         Bathroom = Runs the code for when the player enters the bathroom.
+
+        Basement = Runs the code for when the player enters the basement.
     """
 
     def __init__(self, Character, RoomName="living"):
@@ -268,3 +270,50 @@ class Rooms:
                 self.room_name = "hallway"
             else:
                 print("Not a valid input, try again.")
+    
+
+
+    def Basement(self):
+        """
+        This method defines the actions the player can take when they enter the basement.
+        The player can try to turn on the power or interact with the washing machine.
+
+        Variables:
+            option = The option picked by the player is stored in this variable.
+                     Set to None as default.
+        """
+        option = None
+
+        # Code to describe the basement.
+        print("You walk down the stairs to the basement.")
+        print("It is dark and there is one little light bulb glowing dimly.")
+        print("There is a power generator in front of you.")
+        print("There is also a washing machine in the corner.")
+
+        # While loop allows player to stay in basement as long as they like.
+        while self.room_name != "Kitchen" or self.room_name != "kitchen":
+            print("What do you do?")
+            print("Turn on the power, open the washing machine or go back to the kitchen?")
+            option = input("(Washing/Power/Kitchen) \n")
+            # Use if statement to check for valid input.
+            if option == "Washing" or option == "washing":
+                # Use if statement to check if player has the token.
+                if self.character.token == False:
+                    print("The washing machine will not open.")
+                    print("It looks like you need a token key to open it.")
+                else:
+                    print("You have the token key to open the washing machine.")
+                    pass
+            elif option == "Power" or option == "power":
+                # If statment to check if the player has the power pack.
+                if self.character.power_pack == False:
+                    print("The power will not turn on.")
+                    print("It seems like it is missing a power pack.")
+                else:
+                    print("You have a power pack.")
+                    pass
+            elif option == "Kitchen" or option == "kitchen":
+                # Escapes the while loop.
+                self.room_name = "kitchen"
+            else:
+                print("Invalid input, try again.")
