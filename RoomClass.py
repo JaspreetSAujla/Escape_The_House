@@ -28,6 +28,10 @@ class Rooms:
         Bathroom = Runs the code for when the player enters the bathroom.
 
         Basement = Runs the code for when the player enters the basement.
+
+        Bedroom = Runs the code for when the player enters the bedroom.
+
+        Attic = Runs the code for when the player eneters the attic.
     """
 
     def __init__(self, Character, RoomName="living"):
@@ -65,8 +69,18 @@ class Rooms:
         # This block is used to move into the hallway.
         elif self.room_name == "Hallway" or self.room_name == "hallway":
             self.Hallway()
+        # This block is used to move into the bathroom.
         elif self.room_name == "Bathroom" or self.room_name == "bathroom":
             self.Bathroom()
+        # This block is used to move into the basement.
+        elif self.room_name == "Basement" or self.room_name == "basement":
+            self.Basement()
+        # This block is used to move into the bedroom.
+        elif self.room_name == "Bedroom" or self.room_name == "bedroom":
+            self.Bedroom()
+        # This block is used to move into the attic.
+        elif self.room_name == "Attic" or "attic":
+            self.Attic()
     
 
 
@@ -267,9 +281,10 @@ class Rooms:
                     print("There is nothing in the bath.")
             elif option == "Hallway" or option == "hallway":
                 # Escapes while loop.
-                self.room_name = "hallway"
+                break
             else:
                 print("Not a valid input, try again.")
+        self.room_name = "hallway"
     
 
 
@@ -291,7 +306,7 @@ class Rooms:
         print("There is also a washing machine in the corner.")
 
         # While loop allows player to stay in basement as long as they like.
-        while self.room_name != "Kitchen" or self.room_name != "kitchen":
+        while option != "Kitchen" or option != "kitchen":
             print("What do you do?")
             print("Turn on the power, open the washing machine or go back to the kitchen?")
             option = input("(Washing/Power/Kitchen) \n")
@@ -314,6 +329,83 @@ class Rooms:
                     pass
             elif option == "Kitchen" or option == "kitchen":
                 # Escapes the while loop.
-                self.room_name = "kitchen"
+                break
             else:
                 print("Invalid input, try again.")
+        self.room_name = "kitchen"
+    
+
+
+    def Bedroom(self):
+        """
+        This method defines the actions the player can take when they enter the bedroom.
+        They can interact with the safe, or look at the nightstand.
+
+        Variables:
+            option = The option picked by the player is stored in this variable.
+                     Set to None as default.
+        """
+        option = None
+
+        # Code to describe the bedroom.
+        print("You are in the bedroom.")
+        print("You see a safe in the corner of the room as well as a nightstand next to the bed.")
+        print("You also see a window but the blinds are closed.")
+
+        # While loop allows player to stay in the bedroom as long as they like.
+        while self.room_name != "Hallway" or self.room_name != "hallway":
+            print("What do you do?")
+            print("Look out of the window, look at the nightstand, open the safe or go back to the hallway?")
+            option = input("(Window/Safe/Stand/Hallway) \n")
+            # If statement checks for valid input.
+            if option == "Window" or option == "window":
+                pass
+            elif option == "Safe" or option == "safe":
+                pass
+            elif option == "Stand" or option == "stand":
+                pass
+            elif option == "Hallway" or option == "hallway":
+                # Escapes the while loop.
+                break
+            else:
+                print("Not a valid input, try again.")
+        self.room_name = "hallway"
+    
+
+
+    def Attic(self):
+        """
+        This method runs the code for when the player enters the attic.
+        The player can interact with the desk or the chest.
+
+        Variables:
+            option = The option picked by the player is stored in this variable.
+                     Set to None as default.
+        """
+        option = None
+
+        # Code to describe the attic.
+        print("You are in the attic.")
+        print("It is dark and humid.")
+        print("You see a chest and a desk.")
+
+        # While loop allows player to stay in the attic for as long as they want.
+        while self.room_name != "Hallway" or self.room_name != "hallway":
+            print("What do you do?")
+            print("Look in the chest, examine the desk or return to the hallway?")
+            option = input("(Chest/Desk/Hallway) \n")
+            # If statement checks for valid input.
+            if option == "Chest" or option == "chest":
+                # Checks if the player has the small key.
+                if self.character.small_key == False:
+                    print("It looks like the chest needs a key to open.")
+                else:
+                    pass
+            elif option == "Desk" or option == "desk":
+                pass
+            elif option == "Hallway" or option == "hallway":
+                # Escapes the while loop.
+                break
+            else:
+                print("Not a valid room name, try again.")
+        self.room_name = "hallway"

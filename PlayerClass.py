@@ -34,9 +34,14 @@ class Player:
             self.token = Checks whether the player has picked up the token to open the
                          washing machine.
                          Set to False by default.
+
+            self.small_key = Checks whether the player has picked up the small key 
+                             to open the chest in the attic.
+                             Set to False by defualt.
         """
         self.escaped = False
         self.power = False
         self.batteries = False
         self.power_pack = False
         self.token = False
+        self.small_key = False
