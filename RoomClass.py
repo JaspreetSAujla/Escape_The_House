@@ -117,7 +117,12 @@ class Rooms:
             option = input("(TV/Move) \n")
             # This block allows the player to interact with the TV.
             if option == "TV" or option == "Tv" or option == "tv":
-                pass
+                # Checks if the player has turned on the power or not.
+                if self.character.power == False:
+                    print("The Tv is connected to the mains.")
+                    print("You need to turn on the power first.")
+                else:
+                    pass
             # Allows player to move rooms.
             elif option == "Move" or option == "move":
                 move_rooms = True
@@ -171,7 +176,12 @@ class Rooms:
             option = input("(Radio/Move) \n")
             # This block allows player to interact with the radio.
             if option == "Radio" or option == "radio":
-                pass
+                # Checks whether the player has picked up the batteries.
+                if self.character.batteries == False:
+                    print("The radio is powered by batteries.")
+                    print("You need to find some batteries first.")
+                else:
+                    pass
             # Allows player to move rooms.
             elif option == "Move" or option == "move":
                 move_rooms = True
@@ -276,7 +286,9 @@ class Rooms:
                 # Use if statement to check if player has picked up the power pack already.
                 if self.character.power_pack == False:
                     print("There seems to be something in the bath.")
-                    pass
+                    print("You find a power pack; this could be useful later.")
+                    self.character.power_pack = True
+                    print(self.character.power_pack)
                 else:
                     print("There is nothing in the bath.")
             elif option == "Hallway" or option == "hallway":
