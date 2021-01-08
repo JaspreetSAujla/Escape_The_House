@@ -1,5 +1,6 @@
 from ObjectsClass import Objects
 from PlayerClass import Player
+import time
 
 class Rooms:
     """
@@ -108,13 +109,18 @@ class Rooms:
 
         # Code to describe the room to the player.
         print("You are in the living room.")
+        time.sleep(3)
         print("There is a TV here.")
+        time.sleep(3)
         print("The stairs are on your right and the kitchen is at the back.")
+        time.sleep(3)
         print("The front door is behind you.")
+        time.sleep(3)
 
         # While loop allows player to interact with objects as many times as they like.
         while move_rooms == False:
             print("What would you like to do?")
+            time.sleep(3)
             print("Turn on the TV, or move rooms?")
             option = input("(TV/Move) \n")
             # This block allows the player to interact with the TV.
@@ -130,6 +136,7 @@ class Rooms:
         # Loops over if room is not valid.
         while valid_move == False:
             print("Which room would you like to move to?")
+            time.sleep(3)
             print("The kitchen, upstairs hallway or try the front door.")
             print("(Kitchen/Hallway/Door)")
             self.room_name = input()
@@ -163,12 +170,16 @@ class Rooms:
 
         # Code to describe the room to the player.
         print("You are in the kitchen.")
+        time.sleep(3)
         print("There is a radio on the table.")
+        time.sleep(3)
         print("There are stairs leading down to the basement and the living room is next to you.")
+        time.sleep(3)
 
         # While loop allows player to interact with objects as many times as they like.
         while move_rooms == False:
             print("What would you like to do?")
+            time.sleep(3)
             print("Turn on the radio or move rooms?")
             option = input("(Radio/Move) \n")
             # This block allows player to interact with the radio.
@@ -184,6 +195,7 @@ class Rooms:
         # Loops over if room is not valid.
         while valid_move == False:
             print("Which room would you like to move to?")
+            time.sleep(3)
             print("The basement or living room?")
             print("(Basement/Living)")
             self.room_name = input()
@@ -217,13 +229,18 @@ class Rooms:
 
         # Code to describe the hallway to the player.
         print("You are in the upstairs hallway.")
+        time.sleep(3)
         print("There is a painting on the wall.")
+        time.sleep(3)
         print("There are doors leading to the bedroom, bathroom and attic.")
+        time.sleep(3)
         print("There are also stairs leading down to the living room.")
+        time.sleep(3)
 
         # While loop allows player to interact with objects as many times as they want.
         while move_rooms == False:
             print("What would you like to do?")
+            time.sleep(3)
             print("Look at the painting or move rooms?")
             option = input("(Painting/Move) \n")
             # This block allows the player to interact with the painting.
@@ -239,6 +256,7 @@ class Rooms:
         # Loops over if room is not valid.
         while valid_move == False:
             print("Which room would you like to move to?")
+            time.sleep(3)
             print("The bedroom, bathroom, attic or living room?")
             print("(Bedroom/Bathroom/Attic/Living)")
             self.room_name = input()
@@ -263,12 +281,16 @@ class Rooms:
 
         # Code to describe the bathroom.
         print("You are in the bathroom.")
+        time.sleep(3)
         print("There is a mirror on the wall.")
+        time.sleep(3)
         print("There is also a bath with the shower curtain closed.")
+        time.sleep(3)
 
         # While loop allows player to stay in bathroom as long as they like.
         while self.room_name != "hallway":
             print("What do you do?")
+            time.sleep(3)
             print("Look in the mirror, look in the bath or go back to the hallway?")
             option = input("(Mirror/Bath/Hallway) \n")
             # Use if statement to check for valid input and execute code.
@@ -297,13 +319,18 @@ class Rooms:
 
         # Code to describe the basement.
         print("You walk down the stairs to the basement.")
+        time.sleep(3)
         print("It is dark and there is one little light bulb glowing dimly.")
+        time.sleep(3)
         print("There is a power generator in front of you.")
+        time.sleep(3)
         print("There is also a washing machine in the corner.")
+        time.sleep(3)
 
         # While loop allows player to stay in basement as long as they like.
         while option != "kitchen":
             print("What do you do?")
+            time.sleep(3)
             print("Turn on the power, open the washing machine or go back to the kitchen?")
             option = input("(Washing/Power/Kitchen) \n")
             # Use if statement to check for valid input.
@@ -332,12 +359,16 @@ class Rooms:
 
         # Code to describe the bedroom.
         print("You are in the bedroom.")
+        time.sleep(3)
         print("You see a safe in the corner of the room as well as a nightstand next to the bed.")
+        time.sleep(3)
         print("You also see a window but the blinds are closed.")
+        time.sleep(3)
 
         # While loop allows player to stay in the bedroom as long as they like.
         while self.room_name != "hallway":
             print("What do you do?")
+            time.sleep(3)
             print("Look out of the window, look at the nightstand, open the safe or go back to the hallway?")
             option = input("(Window/Safe/Stand/Hallway) \n")
             # If statement checks for valid input.
@@ -368,12 +399,16 @@ class Rooms:
 
         # Code to describe the attic.
         print("You are in the attic.")
+        time.sleep(3)
         print("It is dark and humid.")
+        time.sleep(3)
         print("You see a chest and a desk.")
+        time.sleep(3)
 
         # While loop allows player to stay in the attic for as long as they want.
         while self.room_name != "hallway":
             print("What do you do?")
+            time.sleep(3)
             print("Look in the chest, examine the desk or return to the hallway?")
             option = input("(Chest/Desk/Hallway) \n")
             # If statement checks for valid input.
@@ -408,27 +443,35 @@ class Rooms:
         response = None
         code_guess = None
         print("You try to open the door.")
+        time.sleep(3)
 
         # Checks if the player has the key and the power is on.
         if self.character.big_key == True and self.character.power == True:
             print("The power is on.")
+            time.sleep(3)
             print("This has turned on the alarm system.")
+            time.sleep(3)
             print("You must enter the password to escape.")
+            time.sleep(3)
             # While loop allows player to try the password as many times as they want.
             while response != "Explore" and response != "explore":
                 print("What do you do?")
+                time.sleep(3)
                 print("Guess the password or carry on exploring?")
                 response = input("(Guess/Explore) \n")
                 if response == "Guess" or response == "guess":
                     print("The alarm requires a 6-digit code.")
+                    time.sleep(3)
                     code_guess = input("What is your guess? \n")
                     # Ensures the input is a string.
                     code_guess = str(code_guess)
                     # Checks to see if the code is correct.
                     if code_guess == "512121":
                         print("That is the correct code.")
+                        time.sleep(3)
                         print("You put the key in the door and unlock it.")
                         self.character.escaped = True
+                        time.sleep(3)
                         break
                     else:
                         print("That is not the correct code.")
@@ -438,9 +481,12 @@ class Rooms:
                     print("Invalid inpur, try again.")
         elif self.character.big_key == True and self.character.power == False:
             print("You have the key to open the door.")
+            time.sleep(3)
             print("However, the door is connected to the mains.")
+            time.sleep(3)
             print("You need to turn on the power first.")
             self.room_name = "living"
         elif self.character.big_key == False:
             print("You need a key to open the door.")
             self.room_name = "living"
+            time.sleep(3)
