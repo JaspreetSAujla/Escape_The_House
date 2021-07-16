@@ -18,23 +18,23 @@ You find yourself in a locked house. Explore what the house has to offer and try
         __init__ = initialises the instance of the class.
                    Takes a default argument of 'living'.
 
-        Move = Allows the player to navigate through the house.
+        move = Allows the player to navigate through the house.
 
-        LivingRoom = Runs the code for when the player enters the living room.
+        living_room = Runs the code for when the player enters the living room.
 
-        Kitchen = Runs the code for when the player enters the kitchen.
+        kitchen = Runs the code for when the player enters the kitchen.
 
-        Hallway = Runs the code for when the player enters the upstairs hallway.
+        hallway = Runs the code for when the player enters the upstairs hallway.
 
-        Bathroom = Runs the code for when the player enters the bathroom.
+        bathroom = Runs the code for when the player enters the bathroom.
 
-        Basement = Runs the code for when the player enters the basement.
+        basement = Runs the code for when the player enters the basement.
 
-        Bedroom = Runs the code for when the player enters the bedroom.
+        bedroom = Runs the code for when the player enters the bedroom.
 
-        Attic = Runs the code for when the player eneters the attic.
+        attic = Runs the code for when the player eneters the attic.
 
-        Door = Runs the code for when the player tries to open the door.
+        door = Runs the code for when the player tries to open the door.
 
 # ObjectsClass.py:
     This class defines the objects in the game that do not contribute to the player escaping.
@@ -44,19 +44,19 @@ You find yourself in a locked house. Explore what the house has to offer and try
     Methods:
         __init__ = Dummy method to ensure code works as no variables need to be set.
 
-        TV = Runs the code for when the player interacts with the TV.
+        tv = Runs the code for when the player interacts with the TV.
 
-        Radio = Runs the code for when the player interacts with the radio.
+        radio = Runs the code for when the player interacts with the radio.
 
-        WashingMachine = Runs the code for when the player interacts with the washing machine.
+        washing_machine = Runs the code for when the player interacts with the washing machine.
 
-        Painting = Runs the code for when the player interacts with the painting.
+        painting = Runs the code for when the player interacts with the painting.
 
-        Mirror = Runs the code for when the player interacts with the mirror.
+        mirror = Runs the code for when the player interacts with the mirror.
 
-        Window = Runs the code for when the player interacts with the window.
+        window = Runs the code for when the player interacts with the window.
 
-        Chest = Runs the code for when the player interacts with the chest.
+        chest = Runs the code for when the player interacts with the chest.
 
 # PlayerClass.py:
     This class will define the player object.
@@ -66,12 +66,12 @@ You find yourself in a locked house. Explore what the house has to offer and try
     Methods:
         __init__ = Sets the initial variables when the person object is created.
 
-        Bath = Runs the method for when the player interacts with the bath.
+        bath = Runs the method for when the player interacts with the bath.
 
-        Generator = Runs the code for when the player interacts with the generator.
+        generator = Runs the code for when the player interacts with the generator.
 
-        Safe = Runs the code for when the player interacts with the safe.
+        safe = Runs the code for when the player interacts with the safe.
 
-        Nightstand = Runs the code for when the player interacts with the nightstand.
+        nightstand = Runs the code for when the player interacts with the nightstand.
 
-        Desk = Runs the code for when the player interacts with the desk.
+        desk = Runs the code for when the player interacts with the desk.

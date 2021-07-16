@@ -16,12 +16,9 @@ if __name__ == "__main__":
     time.sleep(3)
     print("The windows are all boarded up.")
     time.sleep(3)
-    # Calls the living room function to start the game.
-    house.LivingRoom()
 
-    # Loops over until player has escaped.
-    while house.character.escaped == False:
-        house.Move()
+    # Calls the run method to start the game.
+    house.run()
     
     # Code for when the player escapes the house.
     print("You open the door and step outside.")
