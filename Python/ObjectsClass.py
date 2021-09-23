@@ -4,20 +4,24 @@ import time
 
 class Objects:
     """
-    This class defines the objects in the game that do not contribute to the player escaping.
+    This class defines the objects in the game that do not contribute 
+    to the player escaping.
     These objects are for purpose of telling the story.
     Each method will be a different object.
 
     Methods:
-        __init__ = Dummy method to ensure code works as no variables need to be set.
+        __init__ = Dummy method to ensure code works as no variables 
+                   need to be set.
 
         tv = Runs the code for when the player interacts with the TV.
 
         radio = Runs the code for when the player interacts with the radio.
 
-        washing_machine = Runs the code for when the player interacts with the washing machine.
+        washing_machine = Runs the code for when the player interacts 
+                          with the washing machine.
 
-        painting = Runs the code for when the player interacts with the painting.
+        painting = Runs the code for when the player interacts with the 
+                   painting.
 
         mirror = Runs the code for when the player interacts with the mirror.
 
@@ -43,8 +47,8 @@ class Objects:
         If not, nothing will happen.
 
         Parameters:
-            characters = Allows the player object to be used in the function.
-                         This is used to check if the power is on.
+            character = Allows the player object to be used in the function.
+                        This is used to check if the power is on.
         """
         # Checks if the player has turned on the power or not.
         if character.power == False:
@@ -72,10 +76,12 @@ class Objects:
 
         Parameters:
             character = Allows player object to be used in the function.
-                        Checks if the player has batteries so the radio can be used.
+                        Checks if the player has batteries so the radio 
+                        can be used.
         
         Variables:
-            sounds = List of sounds that are played when the player interacts with the radio.
+            sounds = List of sounds that are played when the player 
+                     interacts with the radio.
         """
         sounds = ["'You will never escape...'",
                   "'Are you trying to leave?'",
@@ -183,6 +189,10 @@ class Objects:
         """
         Runs the code for when the player interacts with the chest.
         If the player has the small key, then the chest will open.
+
+        Parameters:
+            character = Passes in the character to check if the 
+                        player has a small key or not.
         """
         # Checks if the player has the small key.
         if character.small_key == False:

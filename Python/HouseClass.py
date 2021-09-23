@@ -2,7 +2,7 @@ from ObjectsClass import Objects
 from PlayerClass import Player
 import time
 
-class Rooms:
+class House:
     """
     This class creates an object that contains all the rooms of the house.
     An instance of this class is therefore a house object.
@@ -15,15 +15,15 @@ class Rooms:
         __init__ = initialises the instance of the class.
                    Takes a default argument of 'living'.
         
-        run = This method is used to start the game.
-
         move = Allows the player to navigate through the house.
 
-        living_room = Runs the code for when the player enters the living room.
+        living_room = Runs the code for when the player enters the 
+                      living room.
 
         kitchen = Runs the code for when the player enters the kitchen.
 
-        hallway = Runs the code for when the player enters the upstairs hallway.
+        hallway = Runs the code for when the player enters the upstairs 
+                  hallway.
 
         bathroom = Runs the code for when the player enters the bathroom.
 
@@ -38,35 +38,26 @@ class Rooms:
 
 
 
-    def __init__(self, RoomName="living"):
+    def __init__(self, RoomName = "living"):
         """
-        This method defines the initial variables when an object is instantiated.
+        This method defines the initial variables when an object is 
+        instantiated.
 
         Variables:
-            self.room_name = Takes the name of the room the character is in. 
+            self.room_name = Takes the name of the room the character is in.
                              This will be set to the living room by default.
 
             self.objects = Creates an instance of the object class.
                            This populates the rooms with non-essential objects.
             
-            self.character = Defines the character object as a variable of the instance of this class.
-                             Allows character methods to be used and variables to be changed.
+            self.character = Defines the character object as a variable of 
+                             the instance of this class.
+                             Allows character methods to be used and 
+                             variables to be changed.
         """
         self.room_name = RoomName
         self.objects = Objects()
         self.character = Player()
-    
-
-
-    def run(self):
-        """
-        This method is uaed to start the game.
-        It calls the living_room method and loops over the 
-        move method until the player escapes.
-        """
-        self.living_room()
-        while self.character.escaped == False:
-            self.move()
     
 
 
@@ -106,17 +97,21 @@ class Rooms:
     def living_room(self):
         """
         This method defines the actions taken within the living room.
-        The player will have the option to interact with objects and choose to move rooms.
+        The player will have the option to interact with objects and 
+        choose to move rooms.
 
         Variables:
-            move_rooms = This variables allows the player to interact with the objects as many times
+            move_rooms = This variables allows the player to interact 
+                         with the objects as many times
                          as they want before moving rooms.
                          Set to False by default.
 
-            option = The option picked by the player is stored in this variable.
+            option = The option picked by the player is stored in this 
+                     variable.
                      Set to None as default.
 
-            valid_move = Checks if the room entered for moving is valid or not.
+            valid_move = Checks if the room entered for moving is valid 
+                         or not.
                          Set to False as default.
         """
         move_rooms = False
@@ -141,7 +136,7 @@ class Rooms:
             option = input("(TV/Move) \n")
             # This block allows the player to interact with the TV.
             if option == "TV" or option == "Tv" or option == "tv":
-                self.objects.tv(self.character)
+                self.objects.tv(character = self.character)
             # Allows player to move rooms.
             elif option == "Move" or option == "move":
                 move_rooms = True
@@ -166,18 +161,22 @@ class Rooms:
 
     def kitchen(self):
         """
-        This method defines the actions taken when the player enters the kitchen.
+        This method defines the actions taken when the player enters 
+        the kitchen.
         The player can interact with objects and move rooms.
 
         Variables:
-            move_rooms = This variables allows the player to interact with the objects as many times
+            move_rooms = This variables allows the player to interact 
+                         with the objects as many times
                          as they want before moving rooms.
                          Set to False by default.
 
-            option = The option picked by the player is stored in this variable.
+            option = The option picked by the player is stored in this 
+                     variable.
                      Set to None as default.
 
-            valid_move = Checks if the room entered for moving is valid or not.
+            valid_move = Checks if the room entered for moving is valid 
+                         or not.
                          Set to False as default.
         """
         move_rooms = False
@@ -200,7 +199,7 @@ class Rooms:
             option = input("(Radio/Move) \n")
             # This block allows player to interact with the radio.
             if option == "Radio" or option == "radio":
-                self.objects.radio(self.character)
+                self.objects.radio(character = self.character)
             # Allows player to move rooms.
             elif option == "Move" or option == "move":
                 move_rooms = True
@@ -225,18 +224,22 @@ class Rooms:
 
     def hallway(self):
         """
-        This method defines the actions taken when the player enters the upstairs hallway.
+        This method defines the actions taken when the player enters 
+        the upstairs hallway.
         The player can interact with the painting or move rooms.
 
         Variables:
-            move_rooms = This variables allows the player to interact with the objects as many times
+            move_rooms = This variables allows the player to interact 
+                         with the objects as many times
                          as they want before moving rooms.
                          Set to False by default.
 
-            option = The option picked by the player is stored in this variable.
+            option = The option picked by the player is stored in this 
+                     variable.
                      Set to None as default.
 
-            valid_move = Checks if the room entered for moving is valid or not.
+            valid_move = Checks if the room entered for moving is valid 
+                         or not.
                          Set to False as default.
         """
         move_rooms = False
@@ -253,7 +256,8 @@ class Rooms:
         print("There are also stairs leading down to the living room.")
         time.sleep(1)
 
-        # While loop allows player to interact with objects as many times as they want.
+        # While loop allows player to interact with objects as many times 
+        # as they want.
         while move_rooms == False:
             print("What would you like to do?")
             time.sleep(1)
@@ -286,14 +290,20 @@ class Rooms:
 
     def bathroom(self):
         """
-        This method defines the actions the player can take when they enter the bathroom.
+        This method defines the actions the player can take when they 
+        enter the bathroom.
         The player can pick up the power back or look at the mirror.
 
         Variables:
-            option = The option picked by the player is stored in this variable.
+            option = The option picked by the player is stored in 
+                     this variable.
                      Set to None as default.
+            
+            leave_bathroom = Stores whether the player wants to 
+                             leave the bathroom or not.
         """
         option = None
+        leave_bathroom = False
 
         # Code to describe the bathroom.
         print("You are in the bathroom.")
@@ -304,7 +314,7 @@ class Rooms:
         time.sleep(1)
 
         # While loop allows player to stay in bathroom as long as they like.
-        while self.room_name != "hallway":
+        while leave_bathroom == False:
             print("What do you do?")
             time.sleep(1)
             print("Look in the mirror, look in the bath or go back to the hallway?")
@@ -317,6 +327,7 @@ class Rooms:
             elif option == "Hallway" or option == "hallway":
                 # Escapes while loop.
                 self.room_name = "hallway"
+                leave_bathroom = True
             else:
                 print("Not a valid input, try again.")
     
@@ -324,14 +335,21 @@ class Rooms:
 
     def basement(self):
         """
-        This method defines the actions the player can take when they enter the basement.
-        The player can try to turn on the power or interact with the washing machine.
+        This method defines the actions the player can take when 
+        they enter the basement.
+        The player can try to turn on the power or interact with 
+        the washing machine.
 
         Variables:
-            option = The option picked by the player is stored in this variable.
+            option = The option picked by the player is stored in 
+                     this variable.
                      Set to None as default.
+            
+            leave_basement = Stores whether the player wants to 
+                             leave the basement or not.
         """
         option = None
+        leave_basement = False
 
         # Code to describe the basement.
         print("You walk down the stairs to the basement.")
@@ -344,19 +362,20 @@ class Rooms:
         time.sleep(1)
 
         # While loop allows player to stay in basement as long as they like.
-        while option != "kitchen":
+        while leave_basement == False:
             print("What do you do?")
             time.sleep(1)
             print("Turn on the power, open the washing machine or go back to the kitchen?")
             option = input("(Washing/Power/Kitchen) \n")
             # Use if statement to check for valid input.
             if option == "Washing" or option == "washing":
-                self.objects.washing_machine(self.character)
+                self.objects.washing_machine(character = self.character)
             elif option == "Power" or option == "power":
                 self.character.generator()
             elif option == "Kitchen" or option == "kitchen":
                 # Escapes the while loop.
                 self.room_name = "kitchen"
+                leave_basement = True
             else:
                 print("Invalid input, try again.")
     
@@ -364,14 +383,20 @@ class Rooms:
 
     def bedroom(self):
         """
-        This method defines the actions the player can take when they enter the bedroom.
+        This method defines the actions the player can take when 
+        they enter the bedroom.
         They can interact with the safe, or look at the nightstand.
 
         Variables:
-            option = The option picked by the player is stored in this variable.
+            option = The option picked by the player is stored in 
+                     this variable.
                      Set to None as default.
+            
+            leave_bedroom = Stores whether the player wants to 
+                            leave the bedroom or not.
         """
         option = None
+        leave_bedroom = False
 
         # Code to describe the bedroom.
         print("You are in the bedroom.")
@@ -382,7 +407,7 @@ class Rooms:
         time.sleep(1)
 
         # While loop allows player to stay in the bedroom as long as they like.
-        while self.room_name != "hallway":
+        while leave_bedroom == False:
             print("What do you do?")
             time.sleep(1)
             print("Look out of the window, look at the nightstand, open the safe or go back to the hallway?")
@@ -397,6 +422,7 @@ class Rooms:
             elif option == "Hallway" or option == "hallway":
                 # Escapes the while loop.
                 self.room_name = "hallway"
+                leave_bedroom = True
             else:
                 print("Not a valid input, try again.")
     
@@ -408,10 +434,15 @@ class Rooms:
         The player can interact with the desk or the chest.
 
         Variables:
-            option = The option picked by the player is stored in this variable.
+            option = The option picked by the player is stored in this 
+                     variable.
                      Set to None as default.
+            
+            leave_attic = Stores whether the player wants to leave the 
+                          attic or not.
         """
         option = None
+        leave_attic = False
 
         # Code to describe the attic.
         print("You are in the attic.")
@@ -421,20 +452,22 @@ class Rooms:
         print("You see a chest and a desk.")
         time.sleep(1)
 
-        # While loop allows player to stay in the attic for as long as they want.
-        while self.room_name != "hallway":
+        # While loop allows player to stay in the attic for as 
+        # long as they want.
+        while leave_attic == False:
             print("What do you do?")
             time.sleep(1)
             print("Look in the chest, examine the desk or return to the hallway?")
             option = input("(Chest/Desk/Hallway) \n")
             # If statement checks for valid input.
             if option == "Chest" or option == "chest":
-                self.objects.chest(self.character)
+                self.objects.chest(character = self.character)
             elif option == "Desk" or option == "desk":
                 self.character.desk()
             elif option == "Hallway" or option == "hallway":
                 # Escapes the while loop.
                 self.room_name = "hallway"
+                leave_attic = True
             else:
                 print("Not a valid room name, try again.")
     
@@ -455,9 +488,13 @@ class Rooms:
             code_guess = Stores what the player thinks the code is.
                          Used to check if the player is correct.
                          Set to None by default.
+            
+            explore = Stores whether the player wants to continue 
+                      exploring or not.
         """
         response = None
         code_guess = None
+        explore = False
         print("You try to open the door.")
         time.sleep(1)
 
@@ -469,8 +506,9 @@ class Rooms:
             time.sleep(1)
             print("You must enter the password to escape.")
             time.sleep(1)
-            # While loop allows player to try the password as many times as they want.
-            while response != "Explore" and response != "explore":
+            # While loop allows player to try the password as many 
+            # times as they want.
+            while explore == False:
                 print("What do you do?")
                 time.sleep(1)
                 print("Guess the password or carry on exploring?")
@@ -493,6 +531,7 @@ class Rooms:
                         print("That is not the correct code.")
                 elif response == "Explore" or response == "explore":
                     self.room_name = "living"
+                    explore = True
                 else:
                     print("Invalid input, try again.")
         elif self.character.big_key == True and self.character.power == False:

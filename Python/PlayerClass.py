@@ -24,34 +24,44 @@ class Player:
 
     def __init__(self):
         """
-        This method defines the initial variables when the person object is created.
+        This method defines the initial variables when the person object 
+        is created.
 
         Variables:
-            self.escaped = This will track whether the player is allowed to escape or not.
-                           All the essential tasks need to be completed to escape.
+            self.escaped = This will track whether the player is allowed 
+                           to escape or not.
+                           All the essential tasks need to be completed 
+                           to escape.
                            Set to False by default.
 
-            self.power = This will check whether the player has turned on the power.
-                         Power needs to be turned on for value to become True.
+            self.power = This will check whether the player has turned 
+                         on the power.
+                         Power needs to be turned on for value to become 
+                         True.
                          Set to False by default.
             
-            self.batteries = Checks whether the player has picked up the batteries.
+            self.batteries = Checks whether the player has picked up the 
+                             batteries.
                              Batteries can be used in the radio.
                              Set to False by default.
             
-            self.power_pack = Checks whether the player has picked up the power pack.
+            self.power_pack = Checks whether the player has picked up the 
+                              power pack.
                               Power pack used to turn power back on.
                               Set to False by default.
             
-            self.token = Checks whether the player has picked up the token to open the
+            self.token = Checks whether the player has picked up the token 
+                         to open the
                          washing machine.
                          Set to False by default.
 
-            self.small_key = Checks whether the player has picked up the small key 
+            self.small_key = Checks whether the player has picked up the 
+                             small key 
                              to open the chest in the attic.
                              Set to False by defualt.
             
-            self.big_key = Checks whether the player has picked up the big key
+            self.big_key = Checks whether the player has picked up the big 
+                           key
                            to open the front door and escape.
                            Set to False by default.
         """
@@ -72,7 +82,8 @@ class Player:
         then they can pick it up.
         Otherwise the bath will be empty.
         """
-        # Use if statement to check if player has picked up the power pack already.
+        # Use if statement to check if player has picked up the 
+        # power pack already.
         if self.power_pack == False:
             print("There seems to be something in the bath.")
             time.sleep(1)
@@ -88,7 +99,8 @@ class Player:
     def generator(self):
         """
         Runs the code for when the player interacts with the generator.
-        If the player has the power pack, they will be able to turn on the power.
+        If the player has the power pack, they will be able to turn on 
+        the power.
         If not, the power will remain off.
         If the power is already on, it will stay on.
         """
@@ -126,7 +138,8 @@ class Player:
             try_again = Checks if the player wants to keep guessing or not.
                         Set to True by default.
             
-            response = Checks what the response is for the player wanting to try again.
+            response = Checks what the response is for the player wanting 
+                       to try again.
                        Set to None by default.
         """
         code_guess = None
@@ -188,7 +201,8 @@ class Player:
         print("The nightstand also has 4 drawers.")
         time.sleep(1)
 
-        # While loop to allow player to interact with nightstand as long as they want.
+        # While loop to allow player to interact with nightstand as long 
+        # as they want.
         while response != "Explore" and response != "explore":
             print("What do you do?")
             time.sleep(1)
@@ -223,6 +237,11 @@ class Player:
                     print("This could power something.")
                     self.batteries = True
                     time.sleep(1)
+            elif response == "Three" or response == "three":
+                print("You open the third drawer.")
+                time.sleep(1)
+                print("It is empty...")
+                time.sleep(1)
             elif response == "Four" or response == "four":
                 print("You open the fourth drawer.")
                 time.sleep(1)
