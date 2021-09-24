@@ -2,14 +2,14 @@ package Java;
 
 import java.util.Scanner;
 
-class PlayerClass {
+class Player {
     /**
     This class will define the player object.
     It will store the essential objects the player needs to escape.
     It will have methods to interact with the essential objects.
 
     Methods:
-        PlayerClass = Sets the initial variables when the person object is created.
+        Player = Sets the initial variables when the person object is created.
 
         bath = Runs the method for when the player interacts with the bath.
 
@@ -31,7 +31,7 @@ class PlayerClass {
 
 
 
-    PlayerClass() {
+    Player() {
         /**
         This method defines the initial variables when the person object 
         is created.
