@@ -194,8 +194,12 @@ class Player:
             response = Allows the player to interact with the nightstand
                        as many times as they like.
                        Set to None by default.
+            
+            explore = Stores whether the player wants to continue 
+                      exploring or not.
         """
         response = None
+        explore = False
         print("You look at the nightstand and see a note on top of it.")
         time.sleep(1)
         print("The nightstand also has 4 drawers.")
@@ -203,7 +207,7 @@ class Player:
 
         # While loop to allow player to interact with nightstand as long 
         # as they want.
-        while response != "Explore" and response != "explore":
+        while explore == False:
             print("What do you do?")
             time.sleep(1)
             print("Read the note, open 1 of the 4 drawers or continue exploring?")
@@ -237,11 +241,6 @@ class Player:
                     print("This could power something.")
                     self.batteries = True
                     time.sleep(1)
-            elif response == "Three" or response == "three":
-                print("You open the third drawer.")
-                time.sleep(1)
-                print("It is empty...")
-                time.sleep(1)
             elif response == "Four" or response == "four":
                 print("You open the fourth drawer.")
                 time.sleep(1)
@@ -256,7 +255,7 @@ class Player:
                     self.big_key = True
                     time.sleep(1)
             elif response == "Explore" or response == "explore":
-                pass
+                explore = True
             else:
                 print("Invalid input, try again.")
     
