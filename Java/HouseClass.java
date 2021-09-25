@@ -37,7 +37,7 @@ class House {
     */
     private String roomName;
     private Objects objects;
-    private Player player;
+    public Player player;
     private Scanner scn;
 
 
