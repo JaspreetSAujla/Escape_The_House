@@ -1,7 +1,7 @@
 # Escape_The_House
 You find yourself in a locked house. 
 Explore what the house has to offer and try and find your way out...
-There is a Python version of the game.
+There is a Python, and Java version of the game.
 
 ## main:
 To play the game, run this file.
