@@ -388,7 +388,7 @@ class House {
         while (leaveBedroom == false) {
             System.out.println("What do you want to do?");
             System.out.println("Look out of the window, look at the nightstand, open the safe or go back to the hallway?");
-            System.out.println("(window/stand/safe/hallway");
+            System.out.println("(window/stand/safe/hallway)");
             option = this.scn.nextLine();
 
             if (option.equals("window")) {
