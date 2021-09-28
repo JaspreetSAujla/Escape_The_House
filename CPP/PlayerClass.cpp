@@ -9,41 +9,41 @@ Player::Player() {
 
     Variables:
         this->escaped = This will track whether the player is allowed 
-                       to escape or not.
-                       All the essential tasks need to be completed 
-                       to escape.
-                       Set to False by default.
+                        to escape or not.
+                        All the essential tasks need to be completed 
+                        to escape.
+                        Set to False by default.
 
         this->power = This will check whether the player has turned 
-                     on the power.
-                     Power needs to be turned on for value to become 
-                     True.
-                     Set to False by default.
+                      on the power.
+                      Power needs to be turned on for value to become 
+                      True.
+                      Set to False by default.
             
         this->batteries = Checks whether the player has picked up the 
-                         batteries.
-                         Batteries can be used in the radio.
-                         Set to False by default.
+                          batteries.
+                          Batteries can be used in the radio.
+                          Set to False by default.
             
         this->powerPack = Checks whether the player has picked up the 
-                         power pack.
-                         Power pack used to turn power back on.
-                         Set to False by default.
+                          power pack.
+                          Power pack used to turn power back on.
+                          Set to False by default.
             
         this->token = Checks whether the player has picked up the token 
-                     to open the
-                     washing machine.
-                     Set to False by default.
+                      to open the
+                      washing machine.
+                      Set to False by default.
 
         this->smallKey = Checks whether the player has picked up the 
-                        small key 
-                        to open the chest in the attic.
-                        Set to False by defualt.
+                         small key 
+                         to open the chest in the attic.
+                         Set to False by defualt.
             
         this->bigKey = Checks whether the player has picked up the big 
-                      key
-                      to open the front door and escape.
-                      Set to False by default.
+                       key
+                       to open the front door and escape.
+                       Set to False by default.
     */
     this->batteries = false;
     this->bigKey = false;
