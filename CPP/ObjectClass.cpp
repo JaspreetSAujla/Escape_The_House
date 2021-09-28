@@ -50,7 +50,7 @@ void Objects::radio(Player player) {
     */
     vector<string> sounds = {"'You will never escape...'",
                              "'Are you trying to leave?'",
-                             "'Do you know what happened here??'",
+                             "'Do you know what happened?'",
                              "'Can you discover my secret...'"};
 
     // Checks whether the player has picked up the batteries.
