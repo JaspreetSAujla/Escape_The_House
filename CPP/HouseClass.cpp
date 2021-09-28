@@ -4,6 +4,8 @@
 #include "HouseClass.h"
 using namespace std;
 
+House::House() {}
+
 House::House(string RoomName) {
     /*
     This method defines the initial variables when an object is 

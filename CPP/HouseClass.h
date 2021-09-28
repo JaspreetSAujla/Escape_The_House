@@ -43,6 +43,8 @@ class House {
     public:
         Player player;
 
+        House();
+
         House(string RoomName);
 
         void move();
